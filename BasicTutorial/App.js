@@ -9,29 +9,23 @@ import {
   Text,
   View,
 } from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
  
 
 
 const App = () => {
 
-const [name,setName]=useState('Initial State' )
-const [session,setSession]=useState({number:6,title:'Before update'})
-const [current,setCurrent]=useState(true)
+const [name,setName]=useState('Styling and Style Sheets' )
+
 const onClickHandle=()=>{
-  setName('Final State')
-  setSession({number:7,title :'After update'})
-  setCurrent(false)
+setName('Styling is Completed!!!')
 }
   return (
 <View style={styles.body}>
-  <Text style={styles.text}>{name} </Text>
-  <Text style={styles.text}>Session number: {session.number}</Text>
- <Text style={styles.text}> About: {session.title} </Text>
- <Text style={styles.text}> {current?'Current session':'Next Session'} </Text>
+ <Text style={styles.text}>{name}</Text>
+<View style={styles.button}>
+<Button title='   Update State   ' onPress={onClickHandle} ></Button>
 
-
-  <Button title='State Change check' onPress={onClickHandle}></Button>
+</View>
 </View>    
   );
 };
@@ -39,18 +33,30 @@ const onClickHandle=()=>{
 const styles = StyleSheet.create({
  body:{
    flex:1,
-   backgroundColor:'#ff6666',
+  //  width:'100%',
+  //  height:'50%',
+  // width:300,
+  // height:500,
+   backgroundColor:'#0fffff',
    alignItems:'center',
    justifyContent:'center',
+   borderWidth:10,
+   borderColor:'#ff00ff',
+   borderRadius:10,
+  //  margin:40,
 
  },
  text:{
-    color:'#99ff99',
+    color:'#000000',
     fontSize:30,
     fontStyle:'italic',
     fontWeight:'500',
     margin:10
 
+ },
+ button:{
+height:60,
+width:200
  }
 });
 
